@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www.covid19counter.org
+RewriteRule (.*) http://covid19counter.org/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^covid19counter\.org $
+RewriteCond %{REQUEST_URI} !^/myFirstApp/
+RewriteRule (.*) /myFirstApp/$1
+
+RewriteCond %{HTTP_HOST} ^(^.*)\.covid19counter.org
+RewriteCond %{REQUEST_URI} !^/myFirstApp/
+RewriteRule (.*) /myFirstApp/$1
